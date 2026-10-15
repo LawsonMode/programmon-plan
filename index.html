@@ -500,7 +500,7 @@ td.date { white-space: nowrap; color: var(--muted); font-variant-numeric: tabula
     <div class="notes">
       <h3>Known issues</h3>
       <ul class="plain">
-        <li>Battles and the switch panel still use the old three-move design. The four-slot design replaces them in M1.</li>
+        <li><s>Battles and the switch panel still use the old three-move design.</s> Fixed Oct 15.</li>
         <li>The code still calls the handheld's call screen "CODEC"; the rename to UPlink is scheduled for M1.</li>
         <li>The pixel font has no long dash (—), so it shows as "?".</li>
         <li>Screen transitions requested during a fade are ignored.</li>
@@ -519,12 +519,12 @@ td.date { white-space: nowrap; color: var(--muted); font-variant-numeric: tabula
       <div class="col-head"><span class="dot" aria-hidden="true"></span><h3>Done</h3><span class="n">13</span></div>
       <ul>
         <li>Handheld shell, controls and pixel screens</li>
-        <li>Programming terminal <span class="sub">old three-move design</span></li>
+        <li>Programming terminal <span class="sub">four slot switches (Oct 15)</span></li>
         <li>Call screen <span class="sub">not yet used in play</span></li>
         <li>Dialogue box, pixel font, title screen</li>
         <li>Audio: 14 tracks, 30 sound effects</li>
         <li>Critter art: 10 species</li>
-        <li>Battle prototype <span class="sub">old three-move design</span></li>
+        <li>Battles in Python <span class="sub">move menu, autopilot, balanced (Oct 15)</span></li>
         <li>Saves with backup, export and import</li>
         <li>Character and NPC art</li>
         <li>Town art: terrain, buildings, interiors <span class="sub">router and sticky-note PC added Oct 15</span></li>
@@ -540,9 +540,8 @@ td.date { white-space: nowrap; color: var(--muted); font-variant-numeric: tabula
       </ul>
     </div>
     <div class="col next">
-      <div class="col-head"><span class="dot" aria-hidden="true"></span><h3>Next</h3><span class="n">4</span></div>
+      <div class="col-head"><span class="dot" aria-hidden="true"></span><h3>Next</h3><span class="n">3</span></div>
       <ol>
-        <li>Combat in Python: four-slot menu, slot-switch autopilot, re-tuned balance</li>
         <li>Overworld, Boot Borough maps, story, menus, shops, saves</li>
         <li>Windows app: build and test the portable exe</li>
         <li>Learning record: start recording objectives, code runs and hints</li>
@@ -570,7 +569,7 @@ td.date { white-space: nowrap; color: var(--muted); font-variant-numeric: tabula
         <ol class="steps">
           <li><s>Finish character and NPC art and the interior tiles.</s> Done Oct 15.</li>
           <li><s>Python runtime: load it behind the title screen, run the combat rules, and stop and restart it if a call runs too long.</s> Done Oct 15: Python 3.14 loads in about a second, sealed off from the network and the computer.</li>
-          <li>Move combat into Python: the four-slot menu, a slot-switch autopilot, and re-tuned balance from a Python simulator.</li>
+          <li><s>Move combat into Python: the four-slot menu, a slot-switch autopilot, and re-tuned balance from a Python simulator.</s> Done Oct 15: every intended counter wins in 3-5 turns and every wrong program loses, for all three starters.</li>
           <li>Overworld, Boot Borough maps, story beats, bottom-screen menus, shops and saves.</li>
           <li>Windows app: build and test the portable exe.</li>
           <li>Learning record: start recording each objective, code run, hint and restore, with timing.</li>
@@ -700,7 +699,7 @@ td.date { white-space: nowrap; color: var(--muted); font-variant-numeric: tabula
   const ORIGIN = { doc: 'In design doc', new: 'New', chad: "Chad's idea", docx: 'In design doc, expanded' };
 
   const M = [
-    ['BB-1','Switch Programming','doc','Fight from four move slots (stock: PULSE, SURGE, FEINT and BRACE) by hand, or set four slot switches as an autopilot to counter observed patterns. A read-only Python view shows the code the switches produce.','Counter a new pattern and explain why it works.',['CS.1.4','CS.5.2'],['DL.1','DL.2'],['AITA.AIM.4'],'Switch panel and battle system (partly built)'],
+    ['BB-1','Switch Programming','doc','Fight from four move slots (stock: PULSE, SURGE, FEINT and BRACE) by hand, or set four slot switches as an autopilot to counter observed patterns. A read-only Python view shows the code the switches produce.','Counter a new pattern and explain why it works.',['CS.1.4','CS.5.2'],['DL.1','DL.2'],['AITA.AIM.4'],'Four-slot battles and autopilot switches (built)'],
     ['BB-2','Predict & Trace','new','Before a battle runs, predict the turn-by-turn outcome and mark it on the run-order diagram. The replay compares the prediction with what happened.','A correct prediction against an unseen opponent, plus the annotated diagram.',['CS.5.1'],['DL.1'],[],'Run-order diagram, code highlighting and battle log (built)'],
     ['BB-3','League Profile','new','Create a League trainer card and choose what it shows: handle or real name, photo, hometown, school. The choices matter again in LJ-6.','Justify one thing kept private.',['ICT.2.1','ODC.11-12.5'],['DL.9'],[],'Character creator, trainer card'],
     ['BB-4','"Does Spark Feel?"','new','After the first evolution, a Link Call: the critter\'s happiness is a Sync number the player raised, and it only shows what it was built to show. A short reflection on giving machines human feelings.','One-line reflection (optional).',[],['DL.13'],['AIF.AU.2'],'Sync meter and evolution scene (built)', true],
