@@ -216,6 +216,8 @@ td.date { white-space: nowrap; color: var(--muted); font-variant-numeric: tabula
 .ms:last-child .ms-rail::before { bottom: auto; height: 22px; }
 .ms-id { position: relative; margin-top: 4px; width: 3.2rem; height: 2.2rem; display: grid; place-items: center; font-family: var(--display); font-weight: 700; font-size: 1.05rem; border-radius: 8px; background: var(--surface); border: 2px solid var(--line); color: var(--muted); }
 .ms.current .ms-id { background: var(--blue); border-color: var(--blue); color: var(--surface); }
+.ms.done .ms-id { background: var(--green); border-color: var(--green); color: var(--surface); }
+.tag.done { background: var(--green-soft); color: var(--green); }
 .ms.mp .ms-id { border-style: dashed; }
 .ms-body { padding-bottom: 30px; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
 .ms-title { display: flex; flex-wrap: wrap; gap: 8px 10px; align-items: baseline; padding-top: 6px; }
@@ -260,7 +262,7 @@ td.date { white-space: nowrap; color: var(--muted); font-variant-numeric: tabula
       </div>
     </div>
     <div class="tabhead" data-for="roadmap" hidden>
-      <p class="lede">What build v0.1.0 contains, what's being built now, the milestones from Boot Borough to Python Heights and multiplayer, and every design decision so far.</p>
+      <p class="lede">What each build contains (now v0.2.0), what's being built next, the milestones from Boot Borough to Python Heights and multiplayer, and every design decision so far.</p>
       <div class="meta">
         <span class="pill ok">Build v0.1.0</span>
         <span class="pill">Updated October 15, 2026</span>
@@ -461,9 +463,54 @@ td.date { white-space: nowrap; color: var(--muted); font-variant-numeric: tabula
 
 <div class="panel" id="panel-roadmap" role="tabpanel" aria-labelledby="tab-roadmap" hidden>
 
-<section aria-labelledby="notes-v010-h">
+<section aria-labelledby="notes-v020-h">
   <div class="section-head">
     <div class="eyebrow">Patch notes</div>
+    <h2 id="notes-v020-h">Build v0.2.0</h2>
+    <p class="muted">Milestone M1 is complete: Boot Borough plays from the first Link Call to the Boot Badge, in the browser and as a portable Windows app. 24 commits since v0.1.0.</p>
+  </div>
+  <div class="table-wrap">
+    <table class="commits">
+      <thead><tr><th>Commit</th><th>Date</th><th>What changed</th></tr></thead>
+      <tbody>
+        <tr><td class="code">e3de891 … 054ca34</td><td class="date">Oct 15, 2026</td><td>Planning: this Roadmap tab, the milestones and multiplayer track, the learning-record plan, the README and the public copy of this page (9 commits)</td></tr>
+        <tr><td class="code">f1d6459</td><td class="date">Oct 15, 2026</td><td>M1 step 1: art check, plus the router and sticky-note PC props</td></tr>
+        <tr><td class="code">88efffa</td><td class="date">Oct 15, 2026</td><td>M1 step 2: Python runs inside the game, sealed off, with time and memory limits</td></tr>
+        <tr><td class="code">89cdbe4</td><td class="date">Oct 15, 2026</td><td>M1 step 3: battle rules in Python, the four-slot move menu and the switch autopilot</td></tr>
+        <tr><td class="code">9bde60b</td><td class="date">Oct 15, 2026</td><td>The UPlink rename in code, and the long dash in the pixel font</td></tr>
+        <tr><td class="code">f3a106e … 9a9eeb0</td><td class="date">Oct 15, 2026</td><td>M1 step 4: the overworld, Boot Borough, Route 1 and interiors; new game; the story; shops; bottom-screen tabs and START menu (4 commits)</td></tr>
+        <tr><td class="code">51aca68</td><td class="date">Oct 15, 2026</td><td>M1 step 5: the Windows app, with a built-in self-test</td></tr>
+        <tr><td class="code">3613b49</td><td class="date">Oct 15, 2026</td><td>M1 step 6: the learning record foundation</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="two">
+    <div class="notes">
+      <h3>New in this build</h3>
+      <ul class="plain">
+        <li><b>Play Boot Borough:</b> pick Blue or Gold, build a character, take the helper's first Link Call, choose a starter, battle Leo, pass Hiro's parts check for a CPU upgrade, beat Route 1 and the gym for the Boot Badge.</li>
+        <li><b>Battles run on real Python:</b> the rules and every trainer's program are Python files, run in a sandbox. Pick a move each turn, or flip four switches into an autopilot.</li>
+        <li><b>Shops:</b> Parts Mart (patch kits, an SSD upgrade) and Threads (free head coverings, clothes in any colour).</li>
+        <li><b>Bottom screen:</b> BOTS, PARTS, CODE, MAP and DATA tabs, plus a START menu with items, save, options and help.</li>
+        <li><b>Help anytime:</b> SELECT calls your helper for a hint that points at what to look at, never the answer.</li>
+        <li><b>Windows app:</b> a portable exe that runs offline, sealed off from the internet, with saves in a folder beside it.</li>
+        <li><b>Learning record:</b> which standards each objective touches, response timing, code runs, fixes and hints, kept in Quark's format beside the save. Nothing is shown in the game; Quark's teacher dashboard will read it.</li>
+      </ul>
+    </div>
+    <div class="notes">
+      <h3>Known issues</h3>
+      <ul class="plain">
+        <li>Not yet tried on a classroom PC: the app takes a few seconds to start, and Windows warns about an unsigned app the first time.</li>
+        <li>The learning record has no export file or "My Learning" view yet (M2).</li>
+        <li>Screen transitions requested during a fade are ignored.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="notes-v010-h">
+  <div class="section-head">
+    <div class="eyebrow">Previous build</div>
     <h2 id="notes-v010-h">Build v0.1.0</h2>
     <p class="muted">The first build: the handheld, its screens and terminal, audio, critter art and a battle prototype, plus every planning document. Four commits on <span class="mono">main</span>.</p>
   </div>
@@ -516,7 +563,7 @@ td.date { white-space: nowrap; color: var(--muted); font-variant-numeric: tabula
   </div>
   <div class="board">
     <div class="col done">
-      <div class="col-head"><span class="dot" aria-hidden="true"></span><h3>Done</h3><span class="n">15</span></div>
+      <div class="col-head"><span class="dot" aria-hidden="true"></span><h3>Done</h3><span class="n">16</span></div>
       <ul>
         <li>Handheld shell, controls and pixel screens</li>
         <li>Programming terminal <span class="sub">four slot switches (Oct 15)</span></li>
@@ -531,6 +578,7 @@ td.date { white-space: nowrap; color: var(--muted); font-variant-numeric: tabula
         <li>Python in the game <span class="sub">sandboxed, with time and memory limits (Oct 15)</span></li>
         <li>Standards, engine, multiplayer, learning-record and build plans</li>
         <li>This web page</li>
+        <li>Learning record foundation <span class="sub">standards per objective, timing, code runs, fixes and hints, in Quark's format (Oct 15)</span></li>
         <li>Windows app <span class="sub">portable exe, saves beside it, sealed off from the internet, built-in self-test (Oct 15)</span></li>
         <li>Boot Borough, playable <span class="sub">town, Route 1, nine interiors, the full story to the Boot Badge, shops, bottom-screen tabs, START menu, autosave (Oct 15)</span></li>
       </ul>
@@ -538,13 +586,16 @@ td.date { white-space: nowrap; color: var(--muted); font-variant-numeric: tabula
     <div class="col prog">
       <div class="col-head"><span class="dot" aria-hidden="true"></span><h3>In progress</h3><span class="n">0</span></div>
       <ul>
-        <li>Nothing mid-way <span class="sub">the learning record is next</span></li>
+        <li>Nothing mid-way <span class="sub">M1 is complete (v0.2.0); Sequence City is next</span></li>
       </ul>
     </div>
     <div class="col next">
-      <div class="col-head"><span class="dot" aria-hidden="true"></span><h3>Next</h3><span class="n">1</span></div>
+      <div class="col-head"><span class="dot" aria-hidden="true"></span><h3>Next</h3><span class="n">4</span></div>
       <ol>
-        <li>Learning record: start recording objectives, code runs and hints</li>
+        <li>Boot Borough missions BB-2 to BB-4</li>
+        <li>Drag-and-drop blocks (SC-1)</li>
+        <li>LAN Center backups and restore; Link Codes; the Link Store</li>
+        <li>"My Learning" for students, and an export file</li>
       </ol>
     </div>
     <div class="col parked">
@@ -562,25 +613,25 @@ td.date { white-space: nowrap; color: var(--muted); font-variant-numeric: tabula
     <p class="muted">One milestone per town, plus multiplayer as a parallel track. Every milestone ends with a clean type check, a playtest in the browser and a progress entry. All of it, multiplayer included, is the committed build plan.</p>
   </div>
   <ol class="milestones">
-    <li class="ms current">
+    <li class="ms done">
       <div class="ms-rail"><span class="ms-id">M1</span></div>
       <div class="ms-body">
-        <div class="ms-title"><h3>Boot Borough, playable</h3><span class="tag now">Current</span><span class="stagep">Switch panel</span></div>
+        <div class="ms-title"><h3>Boot Borough, playable</h3><span class="tag done">Done Oct 15 · v0.2.0</span><span class="stagep">Switch panel</span></div>
         <ol class="steps">
           <li><s>Finish character and NPC art and the interior tiles.</s> Done Oct 15.</li>
           <li><s>Python runtime: load it behind the title screen, run the combat rules, and stop and restart it if a call runs too long.</s> Done Oct 15: Python 3.14 loads in about a second, sealed off from the network and the computer.</li>
           <li><s>Move combat into Python: the four-slot menu, a slot-switch autopilot, and re-tuned balance from a Python simulator.</s> Done Oct 15: every intended counter wins in 3-5 turns and every wrong program loses, for all three starters.</li>
           <li><s>Overworld, Boot Borough maps, story beats, bottom-screen menus, shops and saves.</s> Done Oct 15: the whole town plays from the first Link Call to the Boot Badge.</li>
           <li><s>Windows app: build and test the portable exe.</s> Done Oct 15: it runs Python offline, keeps saves in a folder beside the exe, and passes its built-in self-test.</li>
-          <li>Learning record: start recording each objective, code run, hint and restore, with timing.</li>
+          <li><s>Learning record: start recording each objective, code run, hint and restore, with timing.</s> Done Oct 15: every Boot Borough objective, autopilot run, fix and hint is recorded; restores join when they exist.</li>
         </ol>
         <p class="ms-also">Also: <s>the UPlink rename in code, the missing font dash, and a default loadout and defend module for each starter</s> (all done Oct 15). Mission <a href="#m-BB-1">BB-1</a> is built into the battle work.</p>
       </div>
     </li>
-    <li class="ms">
+    <li class="ms current">
       <div class="ms-rail"><span class="ms-id">M2</span></div>
       <div class="ms-body">
-        <div class="ms-title"><h3>Sequence City</h3><span class="tag ess">Planned</span><span class="stagep">Drag-and-drop blocks</span></div>
+        <div class="ms-title"><h3>Sequence City</h3><span class="tag now">Next</span><span class="stagep">Drag-and-drop blocks</span></div>
         <dl class="ms-list">
           <dt>Boot Borough missions first</dt><dd><a href="#m-BB-2">BB-2 Predict &amp; Trace</a>, <a href="#m-BB-3">BB-3 League Profile</a>, <a href="#m-BB-4">BB-4</a>, and two proposed: BB-5 Under the Hood, BB-6 Lock Your Own Door</dd>
           <dt>Systems</dt><dd>LAN Center backups with restore and a diff of what changed; link codes with a passphrase builder and strength meter; the Link Store with the Games, Backup and Face Lab apps</dd>
